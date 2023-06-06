@@ -1,0 +1,84 @@
+/*
+  Based on TailwindCSS recommendations,
+  consider using classes instead of the `@apply` directive
+  @see https://tailwindcss.com/docs/reusing-styles#avoiding-premature-abstraction
+*/
+.container h1 {
+  @apply text-[32px];
+}
+.container img {
+  @apply w-full h-auto;
+}
+.container figure {
+  @apply mx-0;
+}
+.container figcaption {
+  @apply opacity-60;
+}
+.name {
+  @apply text-4xl;
+}
+.back {
+  @apply inline-block mb-5;
+}
+.bold {
+  @apply font-[bold];
+}
+.cover {
+  @apply w-full h-[300px] object-cover rounded-xl;
+}
+.code {
+  @apply bg-[rgb(242,242,242)] px-1 py-0.5 rounded-sm;
+  font-family: monospace;
+}
+
+.pre {
+  @apply bg-[rgb(242,242,242)] leading-[2.3] overflow-auto mx-0 my-5 px-1 py-0.5 rounded-xl;
+}
+.code_block {
+  @apply flex flex-wrap p-5;
+  font-family: monospace;
+}
+.file {
+  @apply no-underline px-1 py-0.5 hover:cursor-pointer hover:rounded-sm dark:hover:cursor-pointer dark:hover:rounded-sm;
+}
+.file a {
+  @apply text-inherit;
+}
+.file:hover {
+  background: rgba(55, 53, 47, 0.08);
+}
+.strikethrough {
+  @apply line-through;
+}
+.bookmark {
+  @apply block mb-2.5;
+}
+.table {
+  @apply border border-solid border-current border-collapse;
+}
+.table th {
+  @apply border bg-[rgb(242,242,242)] px-3 py-1.5 border-solid border-current;
+}
+.table td {
+  @apply border px-3 py-1.5 border-solid border-current;
+}
+.row {
+  @apply flex;
+}
+.row > div {
+  @apply flex-1;
+}
+.childPage {
+  @apply border p-5 rounded-xl border-solid border-current;
+}
+@media (prefers-color-scheme: dark) {
+  .code,
+  .table,
+  .pre {
+    @apply bg-[rgb(15,8,28)];
+  }
+  .file:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
