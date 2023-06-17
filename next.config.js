@@ -4,7 +4,12 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 module.exports = withBundleAnalyzer({
-  staticPageGenerationTimeout: 300,
+  async rewrites() {
+    return {
+      fallback: [{ source: "/:path*", destination: "/_404/:path*" }],
+    };
+  },
+  staticPageGenerationTimeout: 3000,
   compiler: {
     removeConsole:
       process.env.NODE_ENV === "production" ? { exclude: ["warn"] } : false,

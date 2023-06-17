@@ -6,6 +6,7 @@ export const topNav = {
     { label: "About", href: "/about" },
   ],
 };
+export const MAIN_SITE_URL = "https://tnnts.vercel.app";
 export const domain = "https://tnnts.vercel.app";
 export const brandLogo = "/tnnts.png";
 export const brandName = "BRAND";

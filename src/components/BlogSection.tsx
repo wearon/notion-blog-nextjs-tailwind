@@ -5,8 +5,8 @@ export const BlogSection = ({ posts }) => {
   if (!posts?.length) return null;
 
   return (
-    <div className="bg-white mx-auto pb-6 max-w-7xl px-6 lg:px-8">
-      <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+    <div className="px-6 pb-6 mx-auto -mt-12 bg-white max-w-7xl lg:px-8">
+      <div className="grid max-w-2xl grid-cols-1 mx-auto mt-16 gap-x-8 gap-y-20 sm:grid-cols-2 sm:mx-0 sm:max-w-none lg:grid-cols-3">
         {posts.map((post) => {
           return (
             <Link href={`/${post.url}`} key={post?.id}>
@@ -21,7 +21,7 @@ export const BlogSection = ({ posts }) => {
                   <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
                 </div>
                 <div className="max-w-xl">
-                  <div className="mt-8 flex items-center gap-x-4 text-xs">
+                  <div className="flex items-center mt-8 text-xs gap-x-4">
                     <time
                       dateTime={post.last_edited_time}
                       className="text-gray-500"
@@ -29,12 +29,12 @@ export const BlogSection = ({ posts }) => {
                       {post.updatedAt}
                     </time>
                   </div>
-                  <div className="group relative">
+                  <div className="relative group">
                     <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
                       <span className="absolute inset-0" />
-                      {post?.properties?.Name?.title[0]?.plain_text}
+                      {post?.title}
                     </h3>
-                    <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                    <p className="mt-5 text-sm leading-6 text-gray-600 line-clamp-3">
                       {post.description}
                       {post.properties?.tags.map((tag, i) => (
                         <span
